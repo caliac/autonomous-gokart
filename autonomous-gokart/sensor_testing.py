@@ -1,6 +1,3 @@
-""""
-
-
 import lgpio as GPIO
 import time
 
@@ -26,7 +23,7 @@ def get_distance():
 
     #start recording the time when the wave is sent
     while GPIO.gpio_read(h, ECHO) == 0:
-        pulse.start = time.time()
+        pulse_start = time.time()
 
     while GPIO.gpio_read(h, ECHO) == 1:
         pulse_end = time.time() #record time of arrival
@@ -35,7 +32,7 @@ def get_distance():
 
     
 
-    distance = pulse_duration * 171150 #multiply with tonic speed (34300 cm/s) and div by 2 because there and back
+    distance = pulse_duration * 17150 #multiply with tonic speed (34300 cm/s) and div by 2 because there and back
     distance = round(distance, 2)
 
     return distance
@@ -44,11 +41,9 @@ if __name__ == "main":
     try:
         while True:
             dist = get_distance
-            print("Measured distance = {:.2f} cm".format(dist))
+            print(f"Measured distance = {dist} cm")
             time.sleep(1)
     
     except KeyboardInterrupt: #reset by pressing ctrl+c
         print("Measurement stopped by user")
         GPIO.gpiochip_close(h)
-
-"""
