@@ -20,3 +20,5 @@ class RobotStateMachine(object):
 
     def update(self):
         self.state.execute(self.robot)
+
+#note: maybe move this file to autonomous folder

@@ -1,0 +1,1 @@
+#coordinates of all the other files, basic structure

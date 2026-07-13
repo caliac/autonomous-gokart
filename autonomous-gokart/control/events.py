@@ -10,3 +10,5 @@ class Event(Enum):
     LINE_FOUND = 5
     ESTOP = 6
     RESET = 7
+
+#note: maybe move this file to autonomous folder
