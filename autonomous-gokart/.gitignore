@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Camera test files
+*.mp4
+*.jpg
+*.jpeg
+*.png
+
+# macOS files
+.DS_Store
