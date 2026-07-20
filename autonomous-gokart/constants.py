@@ -2,7 +2,5 @@
 
 #reference these variables by doing constants.variable_name
 
-"""
-height = xxx #height of camera image
-width = xxx #width of camera image
-"""
+height = 2592 #height of camera image
+width = 4608 #width of camera image
