@@ -73,10 +73,19 @@ try:
     my_driver.set_speed(30)
     time.sleep(2)
 
+    my_driver.set_speed(80)
+    time.sleep(4)
+
     my_driver.set_speed(0)
     time.sleep(1)
 
     my_driver.set_speed(-30)
+    time.sleep(2)
+
+    my_driver.set_speed(-100)
+    time.sleep(3)
+
+    my_driver.set_speed(-50)
     time.sleep(2)
 
     my_driver.set_speed(0)
