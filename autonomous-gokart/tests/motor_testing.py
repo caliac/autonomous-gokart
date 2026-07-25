@@ -70,13 +70,13 @@ my_driver = Driver()
 try:
     print("Starting motor test.")
 
-    my_driver.set_speed(10)
+    my_driver.set_speed(30)
     time.sleep(2)
 
     my_driver.set_speed(0)
     time.sleep(1)
 
-    my_driver.set_speed(-10)
+    my_driver.set_speed(-30)
     time.sleep(2)
 
     my_driver.set_speed(0)
