@@ -1,3 +1,4 @@
+"""
 #coordinates of all the other files, basic structure
 import vision
 import cv2
@@ -24,3 +25,32 @@ else: #steering error = 0; on target
 #when program is run, image appears in a popup, press any keyboard key to close it
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+"""
+
+import time
+import hardware
+
+my_driver = hardware.motor_driver.MotorDriver(RPWMpin=18, LPWMpin=19, R_ENpin=23, L_ENpin=24)
+my_motor = hardware.motor.Motor(my_driver)
+
+try:
+
+    my_motor.set_speed(10)
+    time.sleep(2)
+    my_motor.set_speed(70)
+    time.sleep(2)
+    my_motor.set_speed(0)
+    time.sleep(2)
+    my_motor.set_speed(-50)
+    time.sleep(2)
+    my_motor.set_speed(-100)
+    time.sleep(2)
+    my_motor.set_speed(-30)
+    time.sleep(2)
+    my_motor.set_speed(0)
+
+except KeyboardInterrupt: #press ctrl c to quit
+    my_motor.set_speed(0)
+
+finally:
+    my_driver.end()
