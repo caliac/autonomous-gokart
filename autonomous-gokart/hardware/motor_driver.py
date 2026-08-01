@@ -9,7 +9,7 @@ class MotorDriver:
         self.R_ENpin = R_ENpin
         self.L_ENpin = L_ENpin
 
-        self.freq = 1000
+        self.freq = 2000 #Hz
         
         self.handle = GPIO.gpiochip_open(4) #raspberry pi 5 uses handle 4
 
