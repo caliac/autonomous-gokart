@@ -1,5 +1,5 @@
 #motor class
-from motor_driver import MotorDriver
+#from motor_driver import MotorDriver
 
 class Motor:
     def __init__(self, driver):
