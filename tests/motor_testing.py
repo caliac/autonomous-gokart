@@ -9,7 +9,7 @@ class Driver:
         self.L_EN = 24
 
         self.freq = 1000
-        
+
 
         self.handle = GPIO.gpiochip_open(4) #raspberry pi 5 uses handle 4
 
@@ -96,4 +96,3 @@ except KeyboardInterrupt:
 
 finally:
     my_driver.end()
-    print("the end!")
