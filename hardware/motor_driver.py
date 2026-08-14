@@ -30,6 +30,7 @@ class MotorDriver:
         print(f"Motor driver initialized, using RPWM = {self.RPWMpin}, LPWM = {self.LPWMpin}, R_EN = {self.R_ENpin}, L_EN = {self.L_ENpin}")
 
     def set_PWM(self, RPWMspeed, LPWMspeed):
+        print(f"Setting RPWM to {RPWMspeed} and LPWM to {LPWMspeed}")
         #clamps speed values
         RPWMspeed = int(RPWMspeed)
         RPWMspeed = max(0, min(100, RPWMspeed))
@@ -40,6 +41,7 @@ class MotorDriver:
         GPIO.tx_pwm(self.handle, self.LPWMpin, self.freq, LPWMspeed)
 
     def end(self):
+        print("Ending motor driver.")
         GPIO.tx_pwm(self.handle, self.RPWMpin, self.freq, 0)
         GPIO.tx_pwm(self.handle, self.LPWMpin, self.freq, 0)
         GPIO.gpio_write(self.handle, self.R_ENpin, 0)
