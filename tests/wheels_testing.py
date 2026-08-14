@@ -16,4 +16,5 @@ time.sleep(2)
 robot.drive(30)
 time.sleep(2)
 robot.brake()
+robot.end()
 

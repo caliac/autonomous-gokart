@@ -24,3 +24,7 @@ class Wheels:
     def brake(self):
         self.left_motor.set_speed(0)
         self.right_motor.set_speed(0)
+
+    def end(self):
+        self.left_motor.end()
+        self.right_motor.end()
