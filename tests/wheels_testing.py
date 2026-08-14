@@ -11,17 +11,24 @@ right_motor = hardware.motor.Motor(right_motor_driver)
 
 robot = control.wheels.Wheels(left_motor, right_motor)
 
-robot.drive(20)
-time.sleep(2)
-robot.drive(50)
-time.sleep(2)
-robot.drive(-10)
-time.sleep(2)
-robot.right(30)
-time.sleep(1)
-robot.left(40)
-time.sleep(1)
-robot.brake()
-time.sleep(1)
-robot.end()
+
+try:
+    robot.drive(20)
+    time.sleep(2)
+    robot.drive(50)
+    time.sleep(2)
+    robot.drive(-10)
+    time.sleep(2)
+    robot.right(30)
+    time.sleep(1)
+    robot.left(40)
+    time.sleep(1)
+    robot.brake()
+
+except KeyboardInterrupt:
+    robot.brake()
+
+finally:
+    robot.end()
+
 
