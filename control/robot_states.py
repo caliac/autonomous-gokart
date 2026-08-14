@@ -1,7 +1,7 @@
 #each individual state
 
-from state import State
-from events import Event
+from .state import State
+from .events import Event
 
 class Idle(State):
 
