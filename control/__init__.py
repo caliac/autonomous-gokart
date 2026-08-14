@@ -4,3 +4,4 @@ from . import robot_states
 from . import state_machine
 from . import state
 from . import steering
+from . import wheels
