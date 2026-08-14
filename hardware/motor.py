@@ -19,3 +19,7 @@ class Motor:
             self.driver.set_PWM(RPWMspeed=0, LPWMspeed=flipped_speed)
         else: #else, speed = 0
             self.driver.set_PWM(RPWMspeed=0, LPWMspeed=0)
+
+    def end(self):
+        self.driver.set_PWM(RPWMspeed=0, LPWMspeed = 0)
+        self.driver.end()
