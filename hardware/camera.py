@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #camera class
 
 import time
