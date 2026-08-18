@@ -1,5 +1,35 @@
 import cv2
 import numpy as np
+from pathlib import Path
+
+def process_vid(vid_path):
+
+    processed_directory = Path(__file__).parent.parent / "processed_frames"
+    processed_directory.mkdir(parents=True, exist_ok=True)
+
+    vid = cv2.VideoCapture(str(vid_path))
+
+    frame_num = 0
+
+    while True:
+        success, frame = vid.read()
+
+        if not success:
+            break
+
+        processed_frame = process_img(frame)
+
+        processed_path = processed_directory / f"frame_{frame_num:04d}.jpg"
+        cv2.imwrite(str(processed_path), processed_frame)
+
+        frame_num += 1
+
+    vid.release()
+
+    print(f"Processed {frame_num} frames.")
+
+
+
 
 def process_img(img):
     #converts img to hsv, masks, blurs, thresholds; returns the img to pass into find_center()
