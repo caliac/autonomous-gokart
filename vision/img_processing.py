@@ -61,3 +61,7 @@ def vertical_line(img, x):
 
     return img
 
+
+
+process_vid("/home/calia/autonomous-gokart/videos/video_08182026_211327.mp4")
+
