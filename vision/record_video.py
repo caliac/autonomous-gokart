@@ -33,6 +33,8 @@ def record_video(vid_length):
 
     rpi_cam.close()
 
+    return vid_path
+
 
 
 seconds = 10

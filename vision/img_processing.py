@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from pathlib import Path
+from vision import line_detection
 
 def process_vid(vid_path):
 
@@ -17,7 +18,8 @@ def process_vid(vid_path):
         if not success:
             break
 
-        processed_frame = process_img(frame)
+        prepared_frame = process_img(frame)
+        processed_frame = vertical_line(prepared_frame, line_detection.find_center_x(prepared_frame))
 
         processed_path = processed_directory / f"frame_{frame_num:04d}.jpg"
         cv2.imwrite(str(processed_path), processed_frame)
