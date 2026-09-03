@@ -4,6 +4,7 @@ from pathlib import Path
 from vision import line_detection
 
 def process_vid(vid_path):
+    #takes the individal frame of the video from the vid_path parameter and draws vertical line on each
 
     processed_directory = Path(__file__).parent.parent / "processed_frames"
     processed_directory.mkdir(parents=True, exist_ok=True)

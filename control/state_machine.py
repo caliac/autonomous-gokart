@@ -1,24 +1,29 @@
-from robot_states import Idle
+#code here still needs to be completed, but here is the basic skeleton
+
+from robot_states import RobotState
 
 class RobotStateMachine(object):
 
-    def __init__(self, robot):
-        self.robot = robot
-        self.state = Idle()
-        self.state.enter(robot)
+    def __init__(self):
+        self.state = RobotState.IDLE
 
-    def on_event(self, event):
-        next_state = self.state.on_event(event)
-
-        if next_state.__class__ != self.state.__class__:
-            print(f"{self.state} is transitioning to {next_state}")
-            self.state.end(self.robot)
-            self.state = next_state
-            self.state.enter(self.robot)
-
-
+    def transition_to(self, new_state):
+        self.state = new_state
 
     def update(self):
-        self.state.execute(self.robot)
+        if self.state == RobotState.IDLE:
+            self.update_idle()
+
+        elif self.state == RobotState.FOLLOWING_LINE:
+            self.update_following_line()
+
+        elif self.state == RobotState.SEARCHING_LINE:
+            self.update_searching_line()
+
+    def update_following_line(self):
+
+        pass
+        #if obstacle detected,
+            #self.transition_to(RobotState.nextstategoeshere)
 
 #note: maybe move this file to autonomous folder

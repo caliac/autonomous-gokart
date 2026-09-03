@@ -1,3 +1,14 @@
+from enum import Enum, auto
+
+class RobotState(Enum):
+    IDLE = auto()
+    BRAKING = auto()
+    SEARCHING_LINE = auto()
+    FOLLOWING_LINE = auto()
+    STOPPED = auto()
+
+
+"""
 #each individual state
 
 from .state import State
@@ -91,3 +102,4 @@ class EStopped(State):
         return self
 
 #note: maybe move this file to autonomous folder
+"""
