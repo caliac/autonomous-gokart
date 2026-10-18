@@ -1,3 +1,5 @@
+#don't use this file. fix code later
+
 import vision
 from picamera2 import Picamera2
 from vision import capture
