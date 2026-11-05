@@ -1,6 +1,21 @@
 #adding all three vision files (capture, process, steering err) into this one file.
 #run this file to the robot.
 
+import sys
+from pathlib import Path
+
+# 1. Get the directory of pi_vision.py (/home/calia/autonomous-gokart/vision)
+CURRENT_DIR = Path(__file__).resolve().parent
+
+# 2. Get the parent directory (/home/calia/autonomous-gokart)
+PARENT_DIR = CURRENT_DIR.parent
+
+# 3. Add the parent directory to Python's system path before importing
+if str(PARENT_DIR) not in sys.path:
+    sys.path.insert(0, str(PARENT_DIR))  # insert(0, ...) forces Python to check here first
+
+
+
 import cv2
 import numpy as np
 import constants
