@@ -1,4 +1,5 @@
 #adding all three vision files (capture, process, steering err) into this one file.
+#run this file to the robot.
 
 import cv2
 import numpy as np
@@ -64,7 +65,7 @@ def capture(cam):
 
     return steering_error
 
-def main(frame_count):
+def main(frame_count): #main!
 
     camera = Picamera2()
     config = camera.create_preview_configuration({'format': 'BGR888'})
@@ -77,3 +78,8 @@ def main(frame_count):
 
     camera.close() 
 
+
+
+#################
+frame_count = 10
+main(frame_count)

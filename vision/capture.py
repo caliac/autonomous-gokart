@@ -3,6 +3,7 @@ from . import process_img
 from . import steering_error
 
 def capture(cam):
+    #takes picture with rpi cam, then calculates+returns steering error
 
     config = cam.create_preview_configuration({'format': 'BGR888'})
     cam.configure(config)
