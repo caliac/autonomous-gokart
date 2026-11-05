@@ -24,7 +24,7 @@ from picamera2 import Picamera2
 def process_img(img):
     #essentially, this func returns the x coordinate of the center of the taped line OR if no line found, returns none
 
-    if img:
+    if img.any(): #truth value for an array w more than one element is ambiguous, so use a.any() or a.all() -- this is what the terminal said
         #turn it to gray, blur, etc
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
